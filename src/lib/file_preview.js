@@ -73,51 +73,6 @@ class FilePreview {
             //return preview;
         });
     }
-    show(){
-
-        return this.save().then(data=>{
-            let video = new VideoElement(
-                data.filename,
-                Object.assign({
-                    width: this.info.width,
-                    height: this.info.height
-                }, this.info.video)
-            );
-
-            this.element = video;
-
-            this.element.on('play', v=>{
-                if(this.info.playingVideo){
-                    if(this.info.playingVideo !== video){
-                        this.info.playingVideo.pause();
-                    }
-                }
-                this.info.playingVideo = video;
-            });
-
-            this.element.on('pause', v=>{
-                this.info.playingVideo = null;
-            });
-
-            this.element.on('mouseover', data=>{
-                let el = this.infoElement;
-                el.textContent = this.source;
-                el.classList.add(this.infoShowClass);
-            });
-
-            this.element.on('mouseout', data=>{
-                let el = this.infoElement;
-                el.classList.remove(this.infoShowClass);
-            });
-
-            this.info.created(this);
-
-            return Object.assign({
-                video,
-                parent: this.element
-            }, data);
-        });
-    }
 }
 
 module.exports = FilePreview;
