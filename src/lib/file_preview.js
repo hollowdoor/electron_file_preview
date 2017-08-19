@@ -33,6 +33,17 @@ class FilePreview {
     add(preview_type){
         this.types.push(preview_type);
     }
+    createFrom(folder){
+        return new Promise((resolve, reject)=>{
+            fs.readdir(folder, (err, files)=>{
+                if(err) return reject(err);
+                let done = files.map(file=>{
+                    return this.create(file);
+                });
+                Promise.all(done).then(resolve);
+            });
+        });
+    }
     create(filepath){
 
         return makeDir(this.cacheFolder).then(v=>{
