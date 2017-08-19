@@ -1,0 +1,33 @@
+{
+  "name": "electron-file-preview",
+  "version": "1.0.0",
+  "description": "Preview files in electron apps",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "cd test && electron .",
+    "build": "ebam"
+  },
+  "ebam": {
+    "entry": "src/index.js",
+    "test": {
+      "src": "test/src.js",
+      "dest": "test/code.js"
+    }
+  },
+  "keywords": [
+    "electron",
+    "files"
+  ],
+  "author": "Quentin Engles <hollowdoor99@gmail.com> (https://hollowdoor.github.io/)",
+  "license": "MIT",
+  "jsnext:main": "dist/bundle.es.js",
+  "module": "dist/bundle.es.js",
+  "dependencies": {
+    "del": "^3.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "hash-file": "^3.0.0",
+    "is-video": "^1.0.1",
+    "make-dir": "^1.0.0",
+    "unique-string": "^1.0.0"
+  }
+}
