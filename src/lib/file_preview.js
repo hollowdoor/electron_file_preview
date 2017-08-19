@@ -3,6 +3,8 @@ const os = require('os');
 const cpuMax = os.cpus().length;
 const makeDir = require('make-dir');
 const videoPreview = require('../previews/video');
+const fs = require('fs');
+const path = require('path');
 
 class FilePreview {
     constructor({
@@ -38,6 +40,7 @@ class FilePreview {
             fs.readdir(folder, (err, files)=>{
                 if(err) return reject(err);
                 let done = files.map(file=>{
+                    file = path.join(folder, file);
                     return this.create(file);
                 });
                 Promise.all(done).then(resolve);
