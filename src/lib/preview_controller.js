@@ -26,6 +26,11 @@ module.exports = class PreviewController {
                 get(){
                     return previewer.pauseDelay;
                 }
+            },
+            duration: {
+                get(){
+                    return previewer.duration;
+                }
             }
         });
 

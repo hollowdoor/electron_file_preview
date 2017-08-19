@@ -50,9 +50,8 @@ module.exports = class PreviewElement extends EventEmitter {
 
         let spaceDown = false;
 
-
         if(typeof this.element.play === 'function'){
-            //control.player = el;
+            this.element.setAttribute('loop', '');
             this.on('enter', event=>{
                 setTimeout(()=>{
                     if(mouse.inside(el))

@@ -6,16 +6,13 @@ const VideoElement = require('./video_element.js');
 
 class VideoPreview {
     constructor(control, {
-        duration = 60,
         audio = true,
         pauseDelay = 5,
         volume = 0.5
     } = {}){
-        this.duration = duration;
         this.control = control;
         this.cache = control.cachePath('mp4');
         this.filepath = control.filepath;
-        this.duration = duration;
         this.audio = audio;
         this.element = control.createElement(this, 'video');
     }

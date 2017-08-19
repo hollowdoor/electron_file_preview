@@ -1,6 +1,6 @@
 module.exports = function copyVideo(control, preview){
-    let { cache, audio, filepath } = control;
-    let { duration } = preview;
+    let { cache, audio, filepath, duration } = control;
+    //let { duration } = preview;
 
     if(!control.oldCache()){
         return Promise.resolve();

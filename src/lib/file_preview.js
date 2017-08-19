@@ -11,7 +11,8 @@ class FilePreview {
         cacheFolder,
         create,
         volume = 0.3,
-        pauseDelay = 5 //Seconds
+        pauseDelay = 5, //Seconds
+        duration = 60
     } = {}){
         this.cacheFolder = cacheFolder;
         this.previews = [];
@@ -19,6 +20,7 @@ class FilePreview {
         this.volume = volume;
         this.pauseDelay = pauseDelay;
         this._onCreate = create;
+        this.duration = duration;
         this.add(videoPreview);
 
         this.destroy = function(){
