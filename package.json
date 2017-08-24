@@ -2,17 +2,9 @@
   "name": "electron-file-preview",
   "version": "1.0.0",
   "description": "Preview files in electron apps",
-  "main": "src/index.js",
+  "main": "dist/bundle.js",
   "scripts": {
-    "test": "cd test && electron .",
-    "build": "ebam"
-  },
-  "ebam": {
-    "entry": "src/index.js",
-    "test": {
-      "src": "test/src.js",
-      "dest": "test/code.js"
-    }
+    "test": "cd test && electron ."
   },
   "keywords": [
     "electron",
@@ -24,6 +16,7 @@
   "module": "dist/bundle.es.js",
   "dependencies": {
     "del": "^3.0.0",
+    "electron-paperize": "github:hollowdoor/electron_paperize",
     "fluent-ffmpeg": "^2.1.2",
     "hash-file": "^3.0.0",
     "is-video": "^1.0.1",
